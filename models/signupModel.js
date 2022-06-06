@@ -4,9 +4,10 @@ const signupSchema = {
     fname:String,
     email:String,
     phone : String,
+    password: String,
     subject:String
 }
 
-const Signup = mongoose.model("Signup",signupSchema);
+const Signups = mongoose.model("Signups",signupSchema);
 
-module.exports=Signup;
+module.exports=Signups;

@@ -366,7 +366,7 @@ body{
   
   /* form */
   
-  input[type=text], select, textarea {
+  input[type=text], input[type=password],input[type=email],select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid rgb(224, 210, 210);
@@ -377,6 +377,10 @@ body{
     resize: vertical;
     
   }
+  
+  .coloured-section{
+    background-color:#bed113;
+}
   
   input[type=submit] {
   
@@ -408,6 +412,7 @@ body{
 
 
 /* map section */
+
 .info{
   position: relative;
   padding-bottom: 30px;
@@ -486,4 +491,31 @@ footer{
   padding: 2% 2%;
   text-align: center;
 
+}
+#titlel{
+  background-color: #bed113;
+  color:white;
+  position:relative;
+  padding-bottom: 10px;
+   /* For browsers that do not support gradients */
+   /*background-image: linear-gradient(to bottom right,#bed113 ,#c9db26 );*/   
+}
+
+.class-login{
+  padding:10% 30%;
+}
+
+.log-link{
+  background-color:#bed113 ;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: 4 rem;
+  height:10%;
+}
+.logform{
+  padding:5% 20%
+}
+.btn-lg{
+  background-color:#a0e711 ;
 }

@@ -1,3 +1,4 @@
+
 import React from "react"
 
 function Portfolio(){
@@ -5,7 +6,6 @@ return <div>
 <section  className= "port-folio" id="portfolio">
   <h2>OUR PORTFOLIO</h2>
   <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>        
-  
     <div className="row ">
       <div className="col-md-8 port">
         <img src="assets/images/images/portfolio-img-1.png" alt="portfolio-1"></img>
@@ -23,7 +23,6 @@ return <div>
       </div>
     </div>
 </section>
-
 </div>
 }
 

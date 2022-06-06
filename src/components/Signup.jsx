@@ -1,6 +1,7 @@
 
 import React ,{useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 // import { create } from "models/signupModel";
 
 
@@ -11,6 +12,7 @@ function Signup(){
         fname :'',
         email:'',
         phone:'',
+        password:'',
         subject:''
     })
     function handleChange(event){
@@ -31,6 +33,7 @@ function Signup(){
         fname:input.fname,
         email:input.email,
         phone:input.phone,
+        password:input.password,
         subject:input.subject,
     }
         axios.post('http://localhost:3001/create',newSign);
@@ -39,51 +42,50 @@ function Signup(){
 
 
  return <div>
-<section>
-<div className="container-fluid">
-    <nav className="navbar navbar-expand navbar-dark ">
-        {/* <a className="navbar-brand" href=" ">INTOT</a> */}
-      <div className=" navbar-collapse">
-        <ul className="navbar-nav d-none d-lg-flex ml-auto">
-        <li className="nav-item">
-          {/* <a className="nav-link" href=" "><span className="p-4"><img src="assets/images/images/login.png" alt="login"></img></span>Login</a> */}
-        </li>
-        <li className="nav-item">
-          {/* <a className="nav-link" href=" "><span className="p-4"><img src="assets/images/images/signup.png" alt="signup"></img></span>Sign Up</a> */}
-        </li>
-        <li className="nav-item">
-          {/* <a className="nav-link" href=" "><span className="p-4"><img src="assets/images/images/search-icon.png" alt="Search"></img></span></a> */}
-        </li>
-        </ul>
-      </div>
-    {/* <!--  navbar button--> */}
-    <div>
-        <div className="container" >
-          <div className="custom_menu-btn">
-            <button>
-              <span className="s-1">
-              </span>
-              <span className="s-2">
-              </span>
-              <span className="s-3">
-              </span>
-            </button>
-          </div>
-          <div id="myNav" className="overlay">
-            <div className="overlay-content">
-              {/* <a href="index.html">HOME</a>
-              <a href="team.html">TEAM</a>
-              <a href="portfolio.html">PORTFOLIO</a>
-              <a href="contact.html">CONTACT US</a> */}
+ <section id="titlel">
+        <div className="container-fluid">
+          <nav className="navbar navbar-expand navbar-dark ">
+            <a className="navbar-brand" href>INTOT</a>
+             <div className=" navbar-collapse">
+              <ul className="navbar-nav d-none d-lg-flex ml-auto">
+                <li className="nav-item">
+                  <Link to="/login" className="nav-link" href><span className="p-4"><img src="assets/images/images/login.png" alt="login" /></span>Login</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/signup" className="nav-link"><span className="p-4"><img src="assets/images/images/signup.png" alt="signup" /></span>Sign Up</Link> 
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href><span className="p-4"><img src="assets/images/images/search-icon.png" alt="Search" /></span></a>
+                </li>
+              </ul>
             </div>
-          </div>
+            {/*  navbar button*/}
+            <div>
+              <div className="container">
+                <div className="custom_menu-btn">
+                  <button>{/* onClick={"openNav()"}>*/}
+                    <span className="s-1">
+                    </span>
+                    <span className="s-2">
+                    </span>
+                    <span className="s-3">
+                    </span>
+                  </button>
+                </div>
+                <div id="myNav" className="overlay">
+                  <div className="overlay-content">
+                    <a href="index.html">HOME</a>
+                    <a href="team.html">TEAM</a>
+                    <a href="portfolio.html">PORTFOLIO</a>
+                    <a href="contact.html">CONTACT US</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* button end*/}
+          </nav>
         </div>
-    </div>
-
-    {/* <!-- button end--> */}
-    </nav>
-</div>
-</section>
+        </section>
 
 <section id="contact">
     <div className="container-consult">
@@ -97,20 +99,31 @@ function Signup(){
           <div className="container">
             <form action="">
               <label htmlFor="fname">Name</label>
-              <input type="text"  name="fname" value={input.fname} onChange={handleChange} ></input>
+              <input type="text"  name="fname" value={input.fname} onChange={handleChange} autoComplete="off"></input>
           
               <label htmlFor="lname">Email</label>
-              <input onChange={ handleChange } type="text"  value={input.email}   name="email" autoComplete="off"  />
+              <input onChange={ handleChange } type="email"  value={input.email}   name="email"  autoComplete="off" />
 
               <label htmlFor="lname">Phone Number</label>
-              <input onChange={handleChange} type="text"  value={input.phone} name="phone" ></input>
-              <label htmlFor="subject">Message</label>
+              <input onChange={handleChange} type="text"  value={input.phone} name="phone" autoComplete="off"></input>
 
+              <label htmlFor="password">Password</label>
+              <input onChange={handleChange} type="password"  value={input.password} name="password" autoComplete="off" ></input>
+
+
+              <label htmlFor="subject">Message</label>
               <input type="text"  onChange={handleChange} name="subject" value={input.subject}  autoComplete="off" ></input>
-              <button onClick={handleClick} name="send" className="btn btn-lg bg-success" >SEND</button>
+              
+              <button onClick={handleClick} name="send" className="btn btn-lg " >Register</button>
     
               {/* <input type="submit" value="SEND"></input> */}
             </form>
+            <p><br />
+              By clicking the Register button,you agree to our <br />
+              <a href=" ">Terms and Condition</a> and <a href=" ">Policy Privacy.</a><br/>
+              Already have an account?<Link to= "/login" >Login</Link>
+                                            
+          </p>
           </div>
           {/* <!-- form end--> */}
       </div>
